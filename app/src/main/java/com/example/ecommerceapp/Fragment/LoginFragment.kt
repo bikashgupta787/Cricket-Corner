@@ -55,7 +55,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             viewModel.resetPswd.collect{
                 when(it){
                     is Resource.Loading->{
-
                     }
                     is Resource.Success->{
                         Snackbar.make(requireView(),"Reset link sent to email",Snackbar.LENGTH_LONG).show()
@@ -81,7 +80,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                             startActivity(intent)
                         }
                     }
-                    is Resource.Error->{
+                    is Resource.Error-> {
                         Toast.makeText(requireContext(),it.message,Toast.LENGTH_SHORT).show()
                         binding.buttonLogin.revertAnimation()
                     }
