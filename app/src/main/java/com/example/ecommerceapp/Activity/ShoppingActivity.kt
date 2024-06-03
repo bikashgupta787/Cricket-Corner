@@ -47,4 +47,3 @@ class ShoppingActivity : AppCompatActivity() {
     }
 }
 
-//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
