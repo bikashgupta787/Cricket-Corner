@@ -10,5 +10,5 @@ data class CartProduct(
     val selectedColor: Int? = null,
     val selectedSize : String? = null
 ):Parcelable {
-    constructor():this(Product(),1,null,null)
+    constructor():this(Product(),1,null,"")
 }

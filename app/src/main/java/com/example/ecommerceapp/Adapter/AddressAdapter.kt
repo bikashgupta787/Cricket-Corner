@@ -80,5 +80,5 @@ import java.text.FieldPosition
         return differ.currentList.size
     }
 
-    val onClick : ((Address) -> Unit)? = null
+    var onClick : ((Address) -> Unit)? = null
 }
