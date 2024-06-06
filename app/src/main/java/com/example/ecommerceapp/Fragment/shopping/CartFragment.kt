@@ -40,9 +40,12 @@ class CartFragment:Fragment(R.layout.fragment_cart) {
 
         setupCartRv()
 
+        var totalPrice = 0f
+
         lifecycleScope.launchWhenStarted {
             viewModel.productsPrice.collectLatest { price ->
                 price?.let {
+                    totalPrice = it
                     binding.tvTotalPrice.text = "$ $price"
                 }
             }
@@ -60,6 +63,13 @@ class CartFragment:Fragment(R.layout.fragment_cart) {
         cartAdapter.onMinusClick = {
             viewModel.changeQuantity(it,FirebaseCommon.QuantityChanging.DECREASE)
         }
+
+        binding.buttonCheckout.setOnClickListener{
+            val action = CartFragmentDirections.actionCartFragmentToBillingFragment(totalPrice,cartAdapter.differ.currentList.toTypedArray())
+            //findNavController().navigate(R.id.action_cartFragment_to_billingFragment)
+            findNavController().navigate(action)
+        }
+
 
         lifecycleScope.launchWhenStarted {
             viewModel.deleteDialog.collectLatest {
