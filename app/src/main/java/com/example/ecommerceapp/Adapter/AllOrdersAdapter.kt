@@ -81,6 +81,10 @@ class AllOrdersAdapter:RecyclerView.Adapter<AllOrdersAdapter.OrderViewHolder>() 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val order = differ.currentList[position]
         holder.bind(order)
+
+        holder.itemView.setOnClickListener{
+            onClick?.invoke(order)
+        }
     }
 
     var onClick : ((Order) -> Unit)? = null
