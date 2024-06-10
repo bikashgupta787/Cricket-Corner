@@ -81,6 +81,9 @@
         <argument
             android:name="products"
             app:argType="com.example.ecommerceapp.Data.CartProduct[]" />
+        <argument
+            android:name="payment"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/userAccountFragment"
@@ -99,7 +102,8 @@
     <fragment
         android:id="@+id/orderDetailFragment"
         android:name="com.example.ecommerceapp.Fragment.settings.OrderDetailFragment"
-        android:label="OrderDetailFragment" >
+        android:label="OrderDetailFragment"
+        tools:layout="@layout/fragment_order_details">
         <argument
             android:name="Order"
             app:argType="com.example.ecommerceapp.Data.Order.Order" />

@@ -49,9 +49,11 @@ class ProfileFragment:Fragment() {
         }
 
         binding.linearBilling.setOnClickListener {
-//            val action = ProfileFragmentDirections.actionProfileFragmentToBillingFragment(0f,emptyArray())
-//            findNavController().navigate(action)
+            val action = ProfileFragmentDirections.actionProfileFragmentToBillingFragment(0f,
+                emptyArray())
+            findNavController().navigate(action)
         }
+
         binding.linearLogOut.setOnClickListener {
             viewModel.logout()
             val intent = Intent(requireContext(),LoginRegisterActivity::class.java)
@@ -59,7 +61,7 @@ class ProfileFragment:Fragment() {
             requireActivity().finish()
         }
 
-        binding.tvVersion.text = "Version ${com.google.firebase.database.collection.BuildConfig.VERSION_CODE}"
+        //binding.tvVersion.text = "Version ${}"
 
         lifecycleScope.launchWhenStarted {
             viewModel.user.collectLatest {
