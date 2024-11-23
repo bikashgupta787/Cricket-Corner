@@ -19,13 +19,17 @@ class BestProductAdapter: RecyclerView.Adapter<BestProductAdapter.BestProductsVi
         fun bind(product: Product){
             binding.apply {
                 Glide.with(itemView).load(product.images[0]).into(imgProduct)
+                if (product.offerPercentage != null) {
                     val priceAfterOffer = product.offerPercentage.getProductPrice(product.price)
-                    tvNewPrice.text = "$ ${String.format("%.2f",priceAfterOffer)}"
+                    tvNewPrice.text = "Rs. ${String.format("%.2f", priceAfterOffer)}"
+                    tvNewPrice.visibility = View.VISIBLE
                     tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-
-                if (product.offerPercentage == null)
+                } else {
                     tvNewPrice.visibility = View.INVISIBLE
-                tvPrice.text = "$ ${product.price}"
+                    tvPrice.paintFlags = tvPrice.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                }
+
+                tvPrice.text = "Rs. ${product.price}"
                 tvName.text = product.name
             }
         }

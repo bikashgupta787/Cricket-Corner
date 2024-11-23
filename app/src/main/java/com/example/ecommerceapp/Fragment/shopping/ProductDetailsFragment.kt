@@ -76,17 +76,17 @@ class ProductDetailsFragment: Fragment() {
             viewModel.addToCart.collectLatest {
                 when(it){
                     is Resource.Loading -> {
-                        binding.btnAddToCart.startAnimation()
+                        binding.btnAddToCart.visibility = View.VISIBLE
                     }
 
                     is Resource.Success -> {
-                        binding.btnAddToCart.stopAnimation()
+                        binding.btnAddToCart.visibility = View.VISIBLE
                         Toast.makeText(requireContext(),"Added",Toast.LENGTH_SHORT).show()
 
                     }
 
                     is Resource.Error -> {
-                        binding.btnAddToCart.stopAnimation()
+                        binding.btnAddToCart.visibility = View.VISIBLE
                         Toast.makeText(requireContext(),it.message,Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
@@ -97,7 +97,7 @@ class ProductDetailsFragment: Fragment() {
 
         binding.apply {
             tvProductName.text = product.name
-            tvProductPrice.text = "$ ${product.price}"
+            tvProductPrice.text = "Rs. ${product.price}"
             tvProductDesc.text = product.description
 
             if (product.colors.isNullOrEmpty())

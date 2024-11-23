@@ -67,17 +67,17 @@ class ProfileFragment:Fragment() {
             viewModel.user.collectLatest {
                 when (it){
                     is Resource.Loading -> {
-                        binding.progressbarSettings.visibility = View.VISIBLE
+                        //binding.progressbarSettings.visibility = View.VISIBLE
                     }
                     is Resource.Success -> {
-                        binding.progressbarSettings.visibility = View.GONE
+                        //binding.progressbarSettings.visibility = View.GONE
                         Glide.with(requireView()).load(it.data!!.imagePath).error(ColorDrawable(
                             Color.BLACK)).into(binding.imageUser)
                         binding.tvUserName.text = "${it.data.firstName} ${it.data.lastName}"
                     }
                     is Resource.Error->{
                         Toast.makeText(requireContext(),it.message, Toast.LENGTH_SHORT).show()
-                        binding.progressbarSettings.visibility = View.GONE
+                        //binding.progressbarSettings.visibility = View.GONE
                     }
                     else -> Unit
                 }

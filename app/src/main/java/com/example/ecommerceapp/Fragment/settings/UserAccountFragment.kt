@@ -77,10 +77,10 @@ class UserAccountFragment: Fragment() {
             viewModel.updateInfo.collectLatest {
                 when (it){
                     is Resource.Loading -> {
-                        binding.buttonSave.startAnimation()
+                        binding.buttonSave.visibility = View.VISIBLE
                     }
                     is Resource.Success -> {
-                        binding.buttonSave.revertAnimation()
+                        binding.buttonSave.visibility = View.VISIBLE
                         findNavController().navigateUp()
                     }
                     is Resource.Error->{

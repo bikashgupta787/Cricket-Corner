@@ -143,7 +143,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <Button
             android:id="@+id/buttonCheckout"
             style="@style/blueButtonStyle"
             android:layout_width="0dp"
@@ -153,8 +153,7 @@
             android:text="Check out"
             app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@id/leftGuideLine"
-            app:layout_constraintTop_toBottomOf="@id/totalBoxContainer"
-            app:spinning_bar_color="@color/white" />
+            app:layout_constraintTop_toBottomOf="@id/totalBoxContainer" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

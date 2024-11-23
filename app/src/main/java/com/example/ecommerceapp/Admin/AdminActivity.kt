@@ -180,6 +180,7 @@ class AdminActivity : AppCompatActivity() {
 
             firestore.collection("Products").add(product).addOnSuccessListener {
                 hideLoading()
+                clearFields()
             }.addOnFailureListener{
                 hideLoading()
                 Log.e("Error",it.message.toString())
@@ -187,8 +188,21 @@ class AdminActivity : AppCompatActivity() {
         }
     }
 
+    private fun clearFields() {
+        binding.edName.text.clear()
+        binding.edCategory.text.clear()
+        binding.edPrice.text.clear()
+        binding.offerPercentage.text.clear()
+        binding.edDescription.text.clear()
+        binding.edSizes.text.clear()
+        // Clear selected colors and images if necessary
+        selectedColors.clear()
+        // Clear the image byte arrays if necessary
+        selectedImages.clear()
+    }
+
     private fun hideLoading() {
-        binding.progressBar.visibility = View.INVISIBLE
+        binding.progressBar.visibility = View.VISIBLE
     }
 
     private fun showLoading() {

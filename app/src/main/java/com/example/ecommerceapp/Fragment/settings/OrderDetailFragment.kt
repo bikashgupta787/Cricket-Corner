@@ -32,33 +32,33 @@ class OrderDetailFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val order = args.order
+        val order = args.Order
         setupOrderRv()
 
         binding.apply {
             tvOrderId.text = "Order #${order.orderId}"
 
-            stepView.setSteps(
-                mutableListOf(
-                    OrderStatus.Ordered.status,
-                    OrderStatus.Confirmed.status,
-                    OrderStatus.Shipped.status,
-                    OrderStatus.Canceled.status,
-                )
-            )
-
-            val currentOrderState = when(getOrderStatus(order.orderStatus)){
-                is OrderStatus.Ordered -> 0
-                is OrderStatus.Confirmed -> 0
-                is OrderStatus.Shipped -> 0
-                is OrderStatus.Delivered -> 0
-                else -> 0
-            }
-
-            stepView.go(currentOrderState,false)
-            if (currentOrderState == 3){
-                stepView.done(true)
-            }
+//            stepView.setSteps(
+//                mutableListOf(
+//                    OrderStatus.Ordered.status,
+//                    OrderStatus.Confirmed.status,
+//                    OrderStatus.Shipped.status,
+//                    OrderStatus.Canceled.status,
+//                )
+//            )
+//
+//            val currentOrderState = when(getOrderStatus(order.orderStatus)){
+//                is OrderStatus.Ordered -> 0
+//                is OrderStatus.Confirmed -> 0
+//                is OrderStatus.Shipped -> 0
+//                is OrderStatus.Delivered -> 0
+//                else -> 0
+//            }
+//
+//            stepView.go(currentOrderState,false)
+//            if (currentOrderState == 3){
+//                stepView.done(true)
+//            }
             tvFullName.text = order.address.fullName
             tvAddress.text = "${order.address.street} ${order.address.city}"
             tvPhoneNumber.text = order.address.phone

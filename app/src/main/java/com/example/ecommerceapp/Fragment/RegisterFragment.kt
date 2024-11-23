@@ -58,15 +58,15 @@ class RegisterFragment : Fragment() {
             viewModel.register.collect{
                 when(it){
                     is Resource.Loading->{
-                        binding.buttonRegister.startAnimation()
+                        binding.buttonRegister.visibility = View.VISIBLE
                     }
                     is Resource.Success->{
                         Log.d("test",it.data.toString())
-                        binding.buttonRegister.revertAnimation()
+                        binding.buttonRegister.visibility = View.VISIBLE
                     }
                     is Resource.Error->{
                         Log.e(TAG,it.message.toString())
-                        binding.buttonRegister.revertAnimation()
+                        binding.buttonRegister.visibility = View.VISIBLE
                     }
                     else ->Unit
                 }

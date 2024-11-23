@@ -92,16 +92,16 @@ class BillingFragment:Fragment(){
             orderViewModel.order.collectLatest {
                 when(it){
                     is Resource.Loading -> {
-                        binding.buttonPlaceOrder.startAnimation()
+                        binding.buttonPlaceOrder.visibility = View.VISIBLE
                     }
                     is Resource.Success -> {
-                        binding.buttonPlaceOrder.revertAnimation()
+                        binding.buttonPlaceOrder.visibility = View.INVISIBLE
                         findNavController().navigateUp()
                         Snackbar.make(requireView(),"Your order was placed",Snackbar.LENGTH_LONG).show()
                     }
 
                     is Resource.Error -> {
-                        binding.buttonPlaceOrder.revertAnimation()
+                        binding.buttonPlaceOrder.visibility = View.INVISIBLE
                         Toast.makeText(requireContext(),"Error ${it.message}",Toast.LENGTH_SHORT).show()
                     }
 
@@ -112,7 +112,7 @@ class BillingFragment:Fragment(){
         }
 
         billingProductsAdapter.differ.submitList(products)
-        binding.tvTotalPrice.text = "$ $totalPrice"
+        binding.tvTotalPrice.text = "Rs. $totalPrice"
 
         addressAdapter.onClick = {
             selectedAddress = it

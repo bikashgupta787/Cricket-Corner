@@ -134,18 +134,13 @@
             app:layout_constraintStart_toStartOf="@id/leftGuideline"
             app:layout_constraintTop_toBottomOf="@+id/edEmail" />
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <Button
             android:id="@+id/buttonSave"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/blue_background"
-            android:fontFamily="@font/poppins_light"
             android:text="Save"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
+            android:background="@drawable/blue_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             app:layout_constraintStart_toStartOf="@id/leftGuideline"

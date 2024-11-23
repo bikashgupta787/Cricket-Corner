@@ -92,7 +92,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edPasswordLogin"
             app:layout_constraintVertical_bias="0.073" />
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <Button
             android:id="@+id/buttonLogin"
             style="@style/blueButtonStyle"
             android:layout_width="match_parent"
@@ -100,7 +100,6 @@
             android:layout_marginHorizontal="20dp"
             android:ems="10"
             android:text="Login"
-            app:spinning_bar_color="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

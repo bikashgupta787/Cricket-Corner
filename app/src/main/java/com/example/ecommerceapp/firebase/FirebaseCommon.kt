@@ -45,7 +45,7 @@ class FirebaseCommon(
             val document = transition.get(documentRef)
             val productObject = document.toObject(CartProduct::class.java)
             productObject?.let { cartProduct ->
-                val newQuantity = cartProduct.quantity + 1
+                val newQuantity = cartProduct.quantity - 1
                 val newProductObject = cartProduct.copy(quantity = newQuantity)
                 transition.set(documentRef,newProductObject)
             }

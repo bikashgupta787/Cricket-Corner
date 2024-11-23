@@ -35,12 +35,12 @@
             android:textSize="9sp"/>
 
         <TextView
-            android:id="@+id/tv_old_price"
+            android:id="@+id/tv_new_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$2000"
             app:layout_constraintTop_toBottomOf="@id/tv_deal_product_name"
-            app:layout_constraintStart_toEndOf="@id/tv_new_price"
+            app:layout_constraintStart_toEndOf="@id/tv_old_price"
             android:textColor="@color/g_gray700"
             android:textSize="12sp"
             android:fontFamily="@font/sf_pro_display"
@@ -48,27 +48,26 @@
             />
 
         <TextView
-            android:id="@+id/tv_new_price"
+            android:id="@+id/tv_old_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$1600"
             app:layout_constraintStart_toStartOf="@id/tv_deal_product_name"
             app:layout_constraintTop_toBottomOf="@id/tv_deal_product_name"
-
             android:textColor="@color/black"
             android:textSize="12sp"
             android:fontFamily="@font/sf_pro_display"/>
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <Button
             android:id="@+id/btn_see_product"
-            android:layout_width="83dp"
-            android:layout_height="28dp"
-            android:background="@drawable/blue_background"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
             android:fontFamily="@font/poppins_light"
-            android:text="See product"
+            android:text="Add to Cart"
             android:textColor="@color/white"
-            android:textSize="10dp"
+            android:textSize="10sp"
             android:textStyle="bold"
+            android:visibility="invisible"
             app:layout_constraintStart_toEndOf="@id/tv_deal_product_name"
             app:layout_constraintTop_toTopOf="@id/tv_deal_product_name"
             android:textAllCaps="false"

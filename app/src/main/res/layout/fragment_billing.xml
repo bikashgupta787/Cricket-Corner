@@ -216,7 +216,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        <Button
             android:id="@+id/buttonPlaceOrder"
             style="@style/blueButtonStyle"
             android:layout_width="0dp"
@@ -227,8 +227,7 @@
             app:layout_constraintStart_toStartOf="@id/totalBoxContainer"
             app:layout_constraintEnd_toEndOf="@id/totalBoxContainer"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Place Order"
-            app:spinning_bar_color="@color/white"/>
+            android:text="Place Order" />
 
 
         <androidx.constraintlayout.widget.Guideline

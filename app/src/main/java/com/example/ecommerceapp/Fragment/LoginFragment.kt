@@ -71,10 +71,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             viewModel.login.collect{
                 when(it){
                     is Resource.Loading->{
-                        binding.buttonLogin.startAnimation()
+                        binding.buttonLogin.visibility = View.VISIBLE
                     }
                     is Resource.Success->{
-                        binding.buttonLogin.revertAnimation()
+                        binding.buttonLogin.visibility = View.VISIBLE
                         Intent(requireActivity(),ShoppingActivity::class.java).also { intent ->
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                             startActivity(intent)
@@ -82,7 +82,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     }
                     is Resource.Error-> {
                         Toast.makeText(requireContext(),it.message,Toast.LENGTH_SHORT).show()
-                        binding.buttonLogin.revertAnimation()
+                        binding.buttonLogin.visibility = View.VISIBLE
                     }
                     else -> Unit
                 }
