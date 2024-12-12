@@ -1,6 +1,6 @@
 
-<div style="display: flex; margin-bottom: 20px; margin-right: 20px;">
-    <img width="270" height="500" src="https://github.com/user-attachments/assets/078e790d-dca0-4717-b1ff-108e29a21c68" style="margin-right: 20px;">
+<div style="display: flex; margin-bottom: 20px;">
+    <img width="270" height="500" src="https://github.com/user-attachments/assets/078e790d-dca0-4717-b1ff-108e29a21c68" style="margin-right: 80px;">
     <img width="270" height="500" src="https://github.com/user-attachments/assets/4452e0b1-25bc-49c3-a6e5-c4be6fb31539">
 </div>
 
