@@ -1,3 +1,6 @@
+
+<img align="left" width="100" height="100" src="https://picsum.photos/100/100">
+
 ![Screenshot_20241211_190617](https://github.com/user-attachments/assets/078e790d-dca0-4717-b1ff-108e29a21c68)  ||| ![batImg](https://github.com/user-attachments/assets/4452e0b1-25bc-49c3-a6e5-c4be6fb31539)
 
 
